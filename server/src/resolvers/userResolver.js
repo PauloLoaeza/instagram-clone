@@ -4,8 +4,13 @@ const resolvers = {
     getUser: (_, { id }, { models: { User } }) => User.findById(id)
   },
   Mutation: {
-    createUser: (_, { username, password }, { models: { User } }) =>
-      User.create({ username, password })
+    createUser: async (_, args, { models: { User } }) => {
+      try {
+        return await User.create(args);
+      } catch (ex) {
+        return null;
+      }
+    }
   }
 };
 

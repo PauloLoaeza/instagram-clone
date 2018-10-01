@@ -5,12 +5,9 @@ const userType = gql`
     id: ID!
     username: String!
     password: String!
-  }
-
-  type UserShort {
-    id: ID!
-    username: String!
-    thumbnail: String!
+    fullname: String!
+    email: String!
+    thumbnail: String
   }
 
   type Query {
@@ -19,7 +16,7 @@ const userType = gql`
   }
 
   type Mutation {
-    createUser(username: String!, password: String!): User
+    createUser(username: String!, password: String!, fullname: String!, email: String!): User
   }
 `;
 

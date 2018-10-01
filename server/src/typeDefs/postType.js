@@ -5,10 +5,10 @@ const postType = gql`
     id: ID!
     desc: String!
     photo: String!
-    likedBy: [UserShort]!
-    comments: [UserShort]!
+    likedBy: [User]!
+    comments: [User]!
     createdAt: String!
-    by: UserShort
+    by: User
   }
 
   input iPost {
